@@ -1,0 +1,153 @@
+<html>
+<body>
+<h3>Enter the values for the following:</h3>
+<p>Sunday:<input type="number" id="no1"><input type="color" id="co1"></p>
+<p>Monday:<input type="number" id="no2"><input type="color" id="co2"></p>
+<p>Tuesday:<input type="number" id="no3"><input type="color" id="co3"></p>
+<p>Wednesday:<input type="number" id="no4"><input type="color" id="co4"></p>
+<p>Thursday:<input type="number" id="no5"><input type="color" id="co5"></p>
+<p>Friday:<input type="number" id="no6"><input type="color" id="co6"></p>
+<p>Saturday:<input type="number" id="no7"><input type="color" id="co7"></p>
+<input type="button" value="submit" onclick="f1()">
+<canvas id="canvas" height="500" width="800" style="position:absolute;top:2%;left:36%;border:1px solid black;"></canvas>
+<p id="circumference"></p>
+<script type="text/javascript">
+function f1()
+{
+var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext('2d');
+ctx.beginPath();
+ctx.clearRect(0,0,1500,1500)
+var no1=document.getElementById("no1").value;
+var no2=document.getElementById("no2").value;
+var no3=document.getElementById("no3").value;
+var no4=document.getElementById("no4").value;
+var no5=document.getElementById("no5").value;
+var no6=document.getElementById("no6").value;
+var no7=document.getElementById("no7").value;
+var co1=document.getElementById("co1").value;
+var co2=document.getElementById("co2").value;
+var co3=document.getElementById("co3").value;
+var co4=document.getElementById("co4").value;
+var co5=document.getElementById("co5").value;
+var co6=document.getElementById("co6").value;
+var co7=document.getElementById("co7").value;
+var sum=+no1 + +no2 + +no3 + +no4 + +no5 + +no6 + +no7;
+var degree=0.00555555555;
+var circ1=no1/sum*360*degree;
+var circ2=no2/sum*360*degree;
+var circ3=no3/sum*360*degree;
+var circ4=no4/sum*360*degree;
+var circ5=no5/sum*360*degree;
+var circ6=no6/sum*360*degree;
+var circ7=no7/sum*360*degree;
+var p1=no1/sum*100.00;
+var p2=no2/sum*100.00;
+var p3=no3/sum*100.00;
+var p4=no4/sum*100.00;
+var p5=no5/sum*100.00;
+var p6=no6/sum*100.00;
+var p7=no7/sum*100.00;
+
+ctx.beginPath();
+ctx.font="15px Aerial";
+ctx.strokeText("Sunday("+p1+"%)",550,40);
+ctx.strokeText("Monday("+p2+"%)",550,110);
+ctx.strokeText("Tuesday("+p3+"%)",550,180);
+ctx.strokeText("Wednesday("+p4+"%)",550,250);
+ctx.strokeText("Thursday("+p5+"%)",550,320);
+ctx.strokeText("Friday("+p6+"%)",550,390);
+ctx.strokeText("Saturday("+p7+"%)",550,460);
+
+ctx.beginPath();
+ctx.rect(510,25,30,30);
+ctx.fillStyle=co1;
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(510,95,30,30);
+ctx.fillStyle=co2;
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(510,165,30,30);
+ctx.fillStyle=co3;
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(510,235,30,30);
+ctx.fillStyle=co4;
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(510,305,30,30);
+ctx.fillStyle=co5;
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(510,375,30,30);
+ctx.fillStyle=co6;
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(510,445,30,30);
+ctx.fillStyle=co7;
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(250,250);
+ctx.arc(250,250,200,0,circ1*Math.PI);
+ctx.lineTo(250,250);
+ctx.fillStyle=co1;
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(250,250);
+ctx.arc(250,250,200,circ1*Math.PI,circ1*Math.PI+circ2*Math.PI);
+ctx.lineTo(250,250);
+ctx.fillStyle=co2;
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(250,250);
+ctx.arc(250,250,200,circ1*Math.PI+circ2*Math.PI,circ1*Math.PI+circ2*Math.PI+circ3*Math.PI);
+ctx.lineTo(250,250);
+ctx.fillStyle=co3;
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(250,250);
+ctx.arc(250,250,200,circ1*Math.PI+circ2*Math.PI+circ3*Math.PI,circ1*Math.PI+circ2*Math.PI+circ3*Math.PI+circ4*Math.PI);
+ctx.lineTo(250,250);
+ctx.fillStyle=co4;
+ctx.fill();
+
+var Hcircle=circ1*Math.PI+circ2*Math.PI+circ3*Math.PI+circ4*Math.PI;
+
+ctx.beginPath();
+ctx.moveTo(250,250);
+ctx.arc(250,250,200,Hcircle,Hcircle+circ5*Math.PI);
+ctx.lineTo(250,250);
+ctx.fillStyle=co5;
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(250,250);
+ctx.arc(250,250,200,Hcircle+circ5*Math.PI,Hcircle+circ5*Math.PI+circ6*Math.PI);
+ctx.lineTo(250,250);
+ctx.fillStyle=co6;
+ctx.fill();
+
+ctx.beginPath();
+ctx.moveTo(250,250);
+ctx.arc(250,250,200,Hcircle+circ5*Math.PI+circ6*Math.PI,Hcircle+circ5*Math.PI+circ6*Math.PI+circ7*Math.PI);
+ctx.lineTo(250,250);
+ctx.fillStyle=co7;
+ctx.fill();
+}
+/*ctx.beginPath();
+ctx.arc(250,250,200,0,Math.PI*2);
+ctx.stroke();*/
+</script>
+</body>
+</html>

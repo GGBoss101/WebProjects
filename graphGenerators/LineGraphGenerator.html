@@ -1,0 +1,145 @@
+<html>
+<body>
+<h3>Enter values for the following<br>(Max value=100 min value=1)<h3>
+<table border="0" height="70%" width="20%">
+<tr><th><p>Sunday:</p><input type="number" id="no1" min="1" max="100"></th><th><p>Monday:</p><input type="number" id="no2" min="1" max="100"></th></tr>
+<tr><th><p>Tuesday:</p><input type="number" id="no3" min="1" max="100"></th><th><p>Wednesday:</p><input type="number" id="no4" min="1" max="100"></th></tr>
+<tr><th><p>Thursday:</p><input type="number" id="no5" min="1" max="100"></th><th><p>Friday:</p><input type="number" id="no6" min="1" max="100"></th></tr>
+<tr><th><p>Saturday:</p><input type="number" id="no7" min="1" max="100"></th><th><p>Color:</p><br><input type="color" id="gcolor"></th></tr>
+</table>
+<table border="0" height="10%" width="20%"><tr><th><input type="button" value="submit" onclick="f1()"></th></tr></table>
+<canvas id="canvas" height="550" width="700" style="position:absolute;top:2%;left:30%;border:1px solid black" onclick="f1()"></canvas>
+<p style="position:absolute;top:570;left:410;">Sunday</p>
+<p style="position:absolute;top:570;left:510;">Monday</p>
+<p style="position:absolute;top:570;left:610;">Tuesday</p>
+<p style="position:absolute;top:570;left:710;">Wednesday</p>
+<p style="position:absolute;top:570;left:810;">Thursday</p>
+<p style="position:absolute;top:570;left:910;">Friday</p>
+<p style="position:absolute;top:570;left:1010;">Saturday</p>
+<script type="text/javascript">
+var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext("2d");
+ctx.beginPath();
+ctx.font="25px Aerial";
+ctx.strokeText("20",0,455);
+ctx.moveTo(40,450);
+ctx.lineTo(800,450);
+ctx.strokeText("40",0,355);
+ctx.moveTo(40,350);
+ctx.lineTo(800,350);
+ctx.strokeText("60",0,255);
+ctx.moveTo(40,250);
+ctx.lineTo(800,250);
+ctx.strokeText("80",0,155);
+ctx.moveTo(40,150);
+ctx.lineTo(800,150);
+ctx.strokeText("100",0,55);
+ctx.moveTo(40,50);
+ctx.lineTo(800,50);
+ctx.stroke();
+function f1()
+{
+var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext('2d');
+ctx.beginPath();
+ctx.clearRect(0,0,1500,1500)
+var no1=document.getElementById("no1").value;
+var no2=document.getElementById("no2").value;
+var no3=document.getElementById("no3").value;
+var no4=document.getElementById("no4").value;
+var no5=document.getElementById("no5").value;
+var no6=document.getElementById("no6").value;
+var no7=document.getElementById("no7").value;
+var gcolor=document.getElementById("gcolor").value;
+
+ctx.beginPath();
+ctx.strokeStyle="black";
+ctx.font="25px Aerial";
+ctx.strokeText("20",0,455);
+ctx.moveTo(40,450);
+ctx.lineTo(800,450);
+ctx.strokeText("40",0,355);
+ctx.moveTo(40,350);
+ctx.lineTo(800,350);
+ctx.strokeText("60",0,255);
+ctx.moveTo(40,250);
+ctx.lineTo(800,250);
+ctx.strokeText("80",0,155);
+ctx.moveTo(40,150);
+ctx.lineTo(800,150);
+ctx.strokeText("100",0,55);
+ctx.moveTo(40,50);
+ctx.lineTo(800,50);
+ctx.stroke();
+
+var a=550-no1*5;
+var b=550-no2*5;
+var c=550-no3*5;
+var d=550-no4*5;
+var e=550-no5*5;
+var f=550-no6*5;
+var g=550-no7*5;
+
+ctx.beginPath();
+ctx.strokeStyle=gcolor;
+ctx.moveTo(50,a);
+ctx.lineTo(150,b);
+ctx.lineTo(250,c);
+ctx.lineTo(350,d);
+ctx.lineTo(450,e);
+ctx.lineTo(550,f);
+ctx.lineTo(650,g);
+ctx.stroke();
+
+ctx.beginPath()
+ctx.strokeStyle=gcolor;
+ctx.arc(50,a,5,0,Math.PI*2);
+ctx.fillStyle=gcolor;
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath()
+ctx.strokeStyle=gcolor;
+ctx.arc(150,b,5,0,Math.PI*2);
+ctx.fillStyle=gcolor;
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath()
+ctx.strokeStyle=gcolor;
+ctx.arc(250,c,5,0,Math.PI*2);
+ctx.fillStyle=gcolor;
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath()
+ctx.strokeStyle=gcolor;
+ctx.arc(350,d,5,0,Math.PI*2);
+ctx.fillStyle=gcolor;
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath()
+ctx.strokeStyle=gcolor;
+ctx.arc(450,e,5,0,Math.PI*2);
+ctx.fillStyle=gcolor;
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath()
+ctx.strokeStyle=gcolor;
+ctx.arc(550,f,5,0,Math.PI*2);
+ctx.fillStyle=gcolor;
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath()
+ctx.strokeStyle=gcolor;
+ctx.arc(650,g,5,0,Math.PI*2);
+ctx.fillStyle=gcolor;
+ctx.fill();
+ctx.stroke();
+}
+</script>
+</body>
+</html>

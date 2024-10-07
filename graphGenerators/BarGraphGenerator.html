@@ -1,0 +1,102 @@
+<html>
+<body>
+<h3>Enter values for each week(max-100):-</h3>
+<p>Sunday:</p><input type="number" id="sunday" min="1" max="100"><input type="color" id="color1">
+<p>Monday:</p><input type="number" id="monday" min="1" max="100"><input type="color" id="color2">
+<p>Tuesday:</p><input type="number" id="tuesday" min="1" max="100"><input type="color" id="color3">
+<p>Wednesday:</p><input type="number" id="wednesday" min="1" max="100"><input type="color" id="color4">
+<p>Thursday:</p><input type="number" id="thursday" min="1" max="100"><input type="color" id="color5">
+<p>Friday:</p><input type="number" id="friday" min="1" max="100"><input type="color" id="color6">
+<p>Saturday:</p><input type="number" id="saturday" min="1" max="100"><input type="color" id="color7">
+<br><br>
+<input type="button" value="Submit" onclick="f1()">
+<canvas id="canvas" height="550" width="1100" style="border:1px solid black;position:absolute;top:2%;left:30%;"></canvas>
+<script type="text/javascript">//use <script type="text/javascript" src="script.js"> to add a seperate javascript program
+function f1()
+{
+var a=document.getElementById("canvas");
+var ctx=a.getContext("2d");
+ctx.clearRect(0, 0, 1500, 1500);
+var value1=document.getElementById("sunday").value;
+var value2=document.getElementById("monday").value;
+var value3=document.getElementById("tuesday").value;
+var value4=document.getElementById("wednesday").value;
+var value5=document.getElementById("thursday").value;
+var value6=document.getElementById("friday").value;
+var value7=document.getElementById("saturday").value;
+var color1=document.getElementById("color1").value;
+var color2=document.getElementById("color2").value;
+var color3=document.getElementById("color3").value;
+var color4=document.getElementById("color4").value;
+var color5=document.getElementById("color5").value;
+var color6=document.getElementById("color6").value;
+var color7=document.getElementById("color7").value;
+var a=550-(5*value1);
+var b=550-(5*value2);
+var c=550-(5*value3);
+var d=550-(5*value4);
+var e=550-(5*value5);
+var f=550-(5*value6);
+var g=550-(5*value7);
+var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext("2d");
+
+ctx.beginPath();
+ctx.rect(50,a,100,5*value1);//(x,y,width,height)
+ctx.fillStyle=color1;
+ctx.fill();
+ctx.font="40px Aerial";
+ctx.strokeText(value1,80,a-5);
+
+ctx.beginPath();
+ctx.rect(200,b,100,5*value2);
+ctx.fillStyle=color2;
+ctx.fill();
+ctx.font="40px Aerial";
+ctx.strokeText(value2,230,b-5);
+
+ctx.beginPath();
+ctx.rect(350,c,100,5*value3);
+ctx.fillStyle=color3;
+ctx.fill();
+ctx.font="40px Aerial";
+ctx.strokeText(value3,380,c-5);
+
+ctx.beginPath();
+ctx.rect(500,d,100,5*value4);//(x,y,width,height)
+ctx.fillStyle=color4;
+ctx.fill();
+ctx.font="40px Aerial";
+ctx.strokeText(value4,530,d-5);
+
+ctx.beginPath();
+ctx.rect(650,e,100,5*value5);//(x,y,width,height)
+ctx.fillStyle=color5;
+ctx.fill();
+ctx.font="40px Aerial";
+ctx.strokeText(value5,680,e-5);
+
+ctx.beginPath();
+ctx.rect(800,f,100,5*value6);//(x,y,width,height)
+ctx.fillStyle=color6;
+ctx.fill();
+ctx.font="40px Aerial";
+ctx.strokeText(value6,830,f-5);
+
+ctx.beginPath();
+ctx.rect(950,g,100,5*value7);//(x,y,width,height)
+ctx.fillStyle=color7;
+ctx.fill();
+ctx.font="40px Aerial";
+ctx.strokeText(value7,980,g-5);
+}
+</script>
+<p style="position:absolute;top:95%;left:36%;">Sunday</p>
+<p style="position:absolute;top:95%;left:45.5%;">Monday</p>
+<p style="position:absolute;top:95%;left:56%;">Tuesday</p>
+<p style="position:absolute;top:95%;left:66%;">Wednesday</p>
+<p style="position:absolute;top:95%;left:77%;">Thursday</p>
+<p style="position:absolute;top:95%;left:88%;">Friday</p>
+<p style="position:absolute;top:95%;left:98.5%;">Saturday</p>
+</body>
+</html>
